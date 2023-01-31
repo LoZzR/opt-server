@@ -17,6 +17,7 @@ public class OtpServerConfig  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
+        http.headers().frameOptions().disable();// For h2 web console
         http.authorizeRequests()
                 .anyRequest().permitAll();
     }
